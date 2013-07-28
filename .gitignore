@@ -8,3 +8,5 @@
 *.metadata
 *.classpath
 *.project
+*.txt
+*.class
