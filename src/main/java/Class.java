@@ -1,7 +1,6 @@
 
 package gradebook.model;
 import java.util.ArrayList;
-import java.util.List;
 /**
  * This is the the Class class that extends a Course.
  * It also implements a Course interface
@@ -12,7 +11,7 @@ import java.util.List;
 public class Class extends Course {
     private ArrayList<Student> section;
     public Class(final String newname, final String newsubj,
-            final int newnum, final List<Course> newprereq) {
+            final int newnum, final ArrayList<Course> newprereq) {
         super(newname, newsubj, newnum, newprereq);
         section = new ArrayList<Student>();
     }
@@ -25,20 +24,20 @@ public class Class extends Course {
         section.add(newStudent);
         newStudent.setClassName(getCourseName());
     }
-    public List<Student> getSection(){
+    public ArrayList<Student> getSection(){
         return section;
     }
     public final double getCourseAVG() {
         int total = 0;
         int count = 0;
-        if (section.size() == 0) {
+        for (Student student : section) {
+            total += student.getCourseAVG();
+            count++;
+        }
+        if ((total==0 | count==0)) {
             return 0;
         }
         else {
-            for (Student student : section) {
-                total += student.getCourseAVG();
-                count++;
-            }
             setCourseAVG(total / count);
             return (total / count);
         }

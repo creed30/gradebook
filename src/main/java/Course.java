@@ -1,6 +1,6 @@
 
 package gradebook.model;
-import java.util.List;
+import java.util.ArrayList;
 /**
  *Course class with a subject, course number, name, and prerequisite courses.
  *
@@ -20,7 +20,7 @@ public class Course {
     /**
      * @param prerequisite Past Course Prerequisites
      */
-    private List<Course> prerequisite;
+    private ArrayList<Course> prerequisite;
     /**
      * @param courseAVG Course's number average
      */
@@ -32,7 +32,7 @@ public class Course {
      * @param newprereq Prerequisite Course for this Course
      */
     public Course(final String newname, final String newsubj,
-            final int newnum, final List<Course> newprereq) {
+            final int newnum, final ArrayList<Course> newprereq) {
         this.name = newname;
         this.subj = newsubj;
         this.num = newnum;
@@ -43,6 +43,7 @@ public class Course {
         this.name = newname;
         this.subj = newsubj;
         this.num = newnum;
+        prerequisite = new ArrayList<Course>();
     }
     public final String getCourseName() {
         return name;
@@ -52,5 +53,14 @@ public class Course {
     }
     public final void setCourseAVG(final int newcourseAVG) {
         this.courseAVG = newcourseAVG;
+    }
+    public final int getCourseNum(){
+        return num;
+    }
+    public final ArrayList<Course> getPrerequisites() {
+        return prerequisite;
+    }
+    public final String getCourseSubj() {
+        return subj;
     }
 }

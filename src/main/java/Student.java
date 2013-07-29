@@ -1,6 +1,5 @@
 
 package gradebook.model;
-import java.util.List;
 import java.util.ArrayList;
 /**
  * This is the class that represents a student in a course.
@@ -16,7 +15,7 @@ public class Student {
     public Student(final String newname) {
         this.name = newname;
         this.average = 0;
-        grades = new ArrayList();
+        grades = new ArrayList<GradebookItem>();
     }
     public final void addGrade(final GradebookItem newgrade) {
         grades.add(newgrade);
@@ -35,8 +34,8 @@ public class Student {
             total += grade.getGrade();
             count++;
         }
-        if (count == 0) {
-            this.average = total / count;
+        if (count == 0 | total == 0) {
+            this.average = 0;
             return 0;
         }
         else {
@@ -46,5 +45,8 @@ public class Student {
     }
     public final String getCourseAVGLetter(final GradingScheme scheme) {
         return scheme.getLetterGrade(average);
+    }
+    public final String getName() {
+        return name;
     }
 }

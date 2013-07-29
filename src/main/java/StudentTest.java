@@ -13,7 +13,6 @@ public class StudentTest {
         testStudent = new Student("Taramgee");
         testClass.addStudent(testStudent);
         gradeItem = new GradebookItem(90,testStudent);
-        testStudent.addGrade(gradeItem);
         stand = new GradingScheme("cheese",90,80,70,60);
     }
     @Test
@@ -28,10 +27,18 @@ public class StudentTest {
     }
     @Test
     public void getCourseAVGTest() {
+        assertEquals((int)testStudent.getCourseAVG(), 0);
+        testStudent.addGrade(gradeItem);
         assertEquals((int)testStudent.getCourseAVG(), 90);
     }
     @Test
     public void getCourseAVGLetterTest() {
+        assertEquals(testStudent.getCourseAVGLetter(stand), "F");
+        testStudent.addGrade(gradeItem);
         assertEquals(testStudent.getCourseAVGLetter(stand), "A");
+    }
+    @Test
+    public void getNameTest() {
+        assertEquals(testStudent.getName(),"Taramgee");
     }
 }

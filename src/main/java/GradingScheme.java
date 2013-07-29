@@ -28,4 +28,7 @@ public class GradingScheme {
         } else if (gradeAVG >= dRange) { return "D";
         } else { return "F"; }
     }
+    public final String getName() {
+        return name;
+    }
 }
