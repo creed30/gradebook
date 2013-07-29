@@ -18,6 +18,9 @@ public class Class extends Course {
         section.add(newStudent);
         newStudent.setClassName(getCourseName());
     }
+    public List<Student> getSection(){
+        return section;
+    }
     public final double getCourseAVG() {
         int total = 0;
         int count = 0;

@@ -38,6 +38,12 @@ public class Course {
         this.num = newnum;
         this.prerequisite = newprereq;
     }
+    public Course(final String newname, final String newsubj,
+            final int newnum) {
+        this.name = newname;
+        this.subj = newsubj;
+        this.num = newnum;
+    }
     public final String getCourseName() {
         return name;
     }
