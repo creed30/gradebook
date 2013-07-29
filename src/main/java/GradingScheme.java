@@ -13,16 +13,13 @@ public class GradingScheme {
     private int bRange;
     private int cRange;
     private int dRange;
-    private int fRange;
     public GradingScheme(final String newname, final int newaRange,
-            final int newbRange, final int newcRange, final int newdRange,
-            final int newfRange) {
+            final int newbRange, final int newcRange, final int newdRange) {
         this.name = newname;
         this.aRange = newaRange;
         this.bRange = newbRange;
         this.cRange = newcRange;
         this.dRange = newdRange;
-        this.fRange = newfRange;
     }
     public final String getLetterGrade(final int gradeAVG) {
         if (gradeAVG >= aRange) { return "A";
