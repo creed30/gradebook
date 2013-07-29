@@ -8,29 +8,10 @@ import java.util.ArrayList;
  *@version  1.0 7/27/13
  */
 public class Course {
-    /**
-     * @param name Course Name
-     * @param subj Course Subject
-     */
     private final String name, subj;
-    /**
-     * @param num Course Number
-     */
     private final int num;
-    /**
-     * @param prerequisite Past Course Prerequisites
-     */
     private ArrayList<Course> prerequisite;
-    /**
-     * @param courseAVG Course's number average
-     */
     private double courseAVG;
-    /**
-     * @param newname Course Name
-     * @param newnum Course Number
-     * @param newsubj Course Subject
-     * @param newprereq Prerequisite Course for this Course
-     */
     public Course(final String newname, final String newsubj,
             final int newnum, final ArrayList<Course> newprereq) {
         this.name = newname;
@@ -54,7 +35,7 @@ public class Course {
     public final void setCourseAVG(final int newcourseAVG) {
         this.courseAVG = newcourseAVG;
     }
-    public final int getCourseNum(){
+    public final int getCourseNum() {
         return num;
     }
     public final ArrayList<Course> getPrerequisites() {

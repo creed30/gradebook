@@ -37,8 +37,7 @@ public class Student {
         if (count == 0 | total == 0) {
             this.average = 0;
             return 0;
-        }
-        else {
+        } else {
             this.average = total / count;
             return this.average;
         }

@@ -3,19 +3,27 @@ import java.util.ArrayList;
 import org.junit.Test;
 import org.junit.Before;
 import static org.junit.Assert.assertEquals;
+/**
+ * This is the the CourseTest class that tests the Course class.
+ * @author Chad Reed
+ * @version 1.0
+ */
 public class CourseTest {
     private Course testCourse;
     private Course testCourse2;
     private Course testCourse3;
     private ArrayList<Course> prereq;
+    private static final int TEMP = 2110;
+    private static final int TEMP2 = 2340;
+    private static final int TEMP3 = 90;
     @Before
     public void setup() {
-        testCourse = new Course("CS2110", "CS", 2110);
-        testCourse2 = new Course("CS2340", "CS", 2340);
+        testCourse = new Course("CS2110", "CS", TEMP);
+        testCourse2 = new Course("CS2340", "CS", TEMP2);
         prereq = new ArrayList<Course>();
         prereq.add(testCourse);
         prereq.add(testCourse2);
-        testCourse3 = new Course("CS2340", "CS", 2340, prereq);
+        testCourse3 = new Course("CS2340", "CS", TEMP2, prereq);
     }
     @Test
     public void getCourseNameTest() {
@@ -23,16 +31,16 @@ public class CourseTest {
     }
     @Test
     public void getcourseAVGTest() {
-        assertEquals((int)testCourse.getcourseAVG(),(int)0);
+        assertEquals((int) testCourse.getcourseAVG(), (int) 0);
     }
     @Test
     public void setCourseAVGTest() {
-        testCourse.setCourseAVG(90);
-        assertEquals((int)testCourse.getcourseAVG(),(int)90);
+        testCourse.setCourseAVG(TEMP3);
+        assertEquals((int) testCourse.getcourseAVG(), (int) TEMP3);
     }
     @Test
     public void getCourseNumTest() {
-        assertEquals((int)testCourse.getCourseNum(), 2110);
+        assertEquals((int) testCourse.getCourseNum(), TEMP);
     }
     @Test
     public void getPrerequisitesTest() {
